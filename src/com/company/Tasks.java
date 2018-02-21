@@ -54,20 +54,12 @@ public class Tasks {
             System.out.println(index++ + ". " + info.getTaskName() + " due " + info.getDueDate());
         }
 
-        if(TaskLibrary.isEmpty()) {
+        if (TaskLibrary.isEmpty()) {
             System.out.println("Your task list is currently empty.");
-        }
-
-        else{
-            System.out.println("You have chosen to delete a task");
-            System.out.println("What task would you like to delete?");
-        }
-        if(location == 1){
-            menu.taskOptions();
         }
     }
 
-    protected void deleteTasks(){
+    protected void deleteTasks() {
 
         System.out.println("This is all your current tasks. ");
         int index = 1;
@@ -77,12 +69,35 @@ public class Tasks {
 
         if (TaskLibrary.isEmpty()) {
             System.out.println("Your task list is currently empty.");
-        }
-
-        else{
+        } else {
             System.out.println("You have chosen to delete a task");
             System.out.println("What task would you like to delete?");
             removeTask(input.nextInt());
+        }
+    }
+
+    protected void completedTasks() {
+
+        System.out.println("These are your completed tasks");
+        int index = 1;
+        for (Info info : CompletedTasks) {
+            System.out.println(index++ + ". " + info.getTaskName() + " due " + info.getDueDate());
+        }
+    }
+
+    protected void addTaskToCompleted(int taskIndex) {
+
+        taskIndex -= taskIndex;
+        Info info = TaskLibrary.get(taskIndex);
+        UncompletedTasks.remove(taskIndex);
+        CompletedTasks.add(info);
+    }
+
+    protected void showUncompletedTasks() {
+        int index = 1;
+        System.out.println("These are your currently uncompleted tasks.");
+        for (Info info : UncompletedTasks) {
+            System.out.println(index++ + ". " + info.getTaskName() + " due " + info.getDueDate());
         }
     }
 }

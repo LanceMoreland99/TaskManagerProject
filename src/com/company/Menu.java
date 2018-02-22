@@ -57,8 +57,7 @@ public class Menu {
                 "1. Display tasks options.\n" +
                 "2. Display uncompleted task options.\n" +
                 "3. Display completed tasks.\n" +
-                "4. Display completed tasks.\n" +
-                "5. go back to the main menu.");
+                "4. go back to the main menu.");
         try {
             switch (input.nextInt()) {
                 case 1:
@@ -72,12 +71,8 @@ public class Menu {
                 case 3:
                     tasks.completedTasks();
                     taskMenu();
-                case 4:
-                    //display completed tasks
-                    tasks.completedTasks();
-                    taskMenu();
                     break;
-                case 5:
+                case 4:
                     //go back to main menu
                     startMenu();
                     break;
@@ -101,11 +96,13 @@ public class Menu {
         try {
             switch (input.nextInt()) {
                 case 1:
-                    tasks.showAllTasks(1);
                     //display all tasks
+                    tasks.showAllTasks(1);
+                    taskOptions();
                     break;
                 case 2:
                     //Edit task information
+
 
                     break;
                 case 3:
@@ -129,13 +126,14 @@ public class Menu {
 
     public void uncompletedTaskMenu() {
         System.out.println("What would you like to do?\n" +
-                "1. Display uncompleted tasks.\n" +
+                "1. Display uncompleted task menu.\n" +
                 "2. Mark as completed.\n" +
                 "3. Go back to task menu.\n" +
                 "4. Go to the main menu.");
         try {
             switch (input.nextInt()) {
                 case 1:
+                    //show uncompleted tasks
                     tasks.showUncompletedTasks();
                     uncompletedTaskMenu();
                     break;

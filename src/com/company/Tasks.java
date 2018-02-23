@@ -81,7 +81,7 @@ public class Tasks {
         System.out.println("These are your completed tasks");
         int index = 1;
         for (Info info : CompletedTasks) {
-            System.out.println(index++ + ". " + info.getTaskName() + " due " + info.getDueDate());
+            System.out.println(index++ + ". " + info.getTaskName() + " due " + info.getDueDate() + "\n");
         }
     }
 
@@ -97,7 +97,19 @@ public class Tasks {
         int index = 1;
         System.out.println("These are your currently uncompleted tasks.");
         for (Info info : UncompletedTasks) {
-            System.out.println(index++ + ". " + info.getTaskName() + " due " + info.getDueDate());
+            System.out.println(index++ + ". " + info.getTaskName() + " due " + info.getDueDate() + "\n");
         }
+    }
+
+    protected void editTaskInfo() {
+        Scanner scanner = new Scanner(System.in);
+        int index = 1;
+        System.out.println("What task would you like to edit?");
+        for (Info info : TaskLibrary) {
+            System.out.println(index++ + ". " + info.getTaskName() + " due " + info.getDueDate() + "\n");
+        }
+        System.out.println(TaskLibrary.get(input.nextInt() - 1));
+        
+        editTaskInfo();
     }
 }

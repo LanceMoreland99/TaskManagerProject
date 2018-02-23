@@ -102,8 +102,7 @@ public class Menu {
                     break;
                 case 2:
                     //Edit task information
-
-
+                    tasks.editTaskInfo();
                     break;
                 case 3:
                     //Go back to tasks
@@ -126,7 +125,7 @@ public class Menu {
 
     public void uncompletedTaskMenu() {
         System.out.println("What would you like to do?\n" +
-                "1. Display uncompleted task menu.\n" +
+                "1. Display uncompleted tasks.\n" +
                 "2. Mark as completed.\n" +
                 "3. Go back to task menu.\n" +
                 "4. Go to the main menu.");
@@ -156,7 +155,7 @@ public class Menu {
 
         } catch (InputMismatchException ime) {
             input.nextLine();
-            System.out.println("Please input a correct number from above 1-3.\n");
+            System.out.println("Please input a correct number from above 1-4.\n");
             uncompletedTaskMenu();
 
         }

@@ -18,7 +18,6 @@ public class Tasks {
     }
 
     protected void addTask(Info info) {
-        //Code to add task goes here.
 
         System.out.println("What is the name of your task?");
         info.setTaskName(input.nextLine());
@@ -145,7 +144,6 @@ public class Tasks {
 
                 case 1:
                     System.out.println("What would you like to make the name of this task?\n");
-                    //edit task name
                     input.nextLine();
                     displayTask.setTaskName(input.nextLine());
                     System.out.println(displayTask.getTaskName() + " " + displayTask.getDueDate() + " " + displayTask.getDetails());
@@ -153,7 +151,6 @@ public class Tasks {
                     break;
                 case 2:
                     System.out.println("What is the new due date?\n");
-                    //edit due date
                     input.nextLine();
                     displayTask.setDueDate(input.nextLine());
                     System.out.println(displayTask.getTaskName() + " " + displayTask.getDueDate() + " " + displayTask.getDetails());
@@ -161,7 +158,6 @@ public class Tasks {
                     break;
                 case 3:
                     System.out.println("What details would you like to add about this task?\n");
-                    //edit task details
                     input.nextLine();
                     displayTask.setDetails(input.nextLine());
                     System.out.println(displayTask.getTaskName() + " " + displayTask.getDueDate() + " " + displayTask.getDetails());
@@ -169,11 +165,9 @@ public class Tasks {
                     break;
                 case 4:
                     menu.taskOptions();
-                    //go back to taskOptions
                     break;
                 case 5:
                     menu.startMenu();
-                    //go to main menu
                     break;
 
                 default:

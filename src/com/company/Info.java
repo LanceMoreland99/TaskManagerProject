@@ -38,4 +38,10 @@ public class Info {
     public void setDateCompleted(String dateCompleted) {
         this.dateCompleted = dateCompleted;
     }
+
+//    public Info(String taskName, String dueDate, String details) {
+//        this.taskName = taskName;
+//        this.dueDate = dueDate;
+//        this.details = details;
+//    }
 }

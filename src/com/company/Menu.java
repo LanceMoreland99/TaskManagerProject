@@ -22,8 +22,8 @@ public class Menu {
 
                 case 1:
                     //Create new task.
-                    Info info = new Info();
                     input.nextLine();
+                    Info info = new Info();
                     System.out.println("You have chosen to create a new task.");
 
                     //List options to create a task.
@@ -42,6 +42,10 @@ public class Menu {
                     //Exit task.
                     System.out.println("Thank you for using task manager, Good bye. ");
                     System.exit(0);
+                default:
+                    System.out.println("Please enter one of the following numbers between 1 and 4.");
+
+                    startMenu();
             }
 
         } catch (InputMismatchException ime) {
@@ -76,6 +80,11 @@ public class Menu {
                     //go back to main menu
                     startMenu();
                     break;
+
+                default:
+                    System.out.println("Please enter one of the following numbers between 1 and 4.");
+
+                    taskMenu();
             }
         } catch (InputMismatchException ime) {
             input.nextLine();
@@ -112,6 +121,11 @@ public class Menu {
                     //go back to main menu
                     startMenu();
                     break;
+
+                default:
+                    System.out.println("Please enter one of the following numbers between 1 and 4.");
+
+                    taskOptions();
             }
         } catch (InputMismatchException ime) {
             input.nextLine();
@@ -151,13 +165,70 @@ public class Menu {
                     //go back to main menu.
                     startMenu();
                     break;
+
+                default: System.out.println("Please enter a number between 1 and 4");
+
+                uncompletedTaskMenu();
+
             }
 
         } catch (InputMismatchException ime) {
             input.nextLine();
-            System.out.println("Please input a correct number from above 1-4.\n");
+            System.out.println("Please input a valid number from above 1-4.\n");
             uncompletedTaskMenu();
 
         }
     }
 }
+//    public void editingTasks() {
+//        Info info = new Info();
+//        try{
+//            System.out.println("What would you like to do?\n" +
+//                    "1. Edit task name.\n" +
+//                    "2. Edit task's due date.\n" +
+//                    "3. Edit task details.\n" +
+//                    "4. Go back to task options.\n" +
+//                    "5. Go to the main menu.\n");
+//            switch(input.nextInt()){
+//
+//                case 1:System.out.println("What would you like to make the name of this task?");
+//                //edit task name
+//                    input.nextLine();
+//                    info.setTaskName(input.nextLine());
+//                    System.out.println(info.getTaskName() + " " + info.getDueDate() + " " + info.getDetails());
+//                    editingTasks();
+//                    break;
+//                case 2:System.out.println("What is the new due date?");
+//                //edit due date
+//                    input.nextLine();
+//                    info.setDueDate(input.nextLine());
+//                    System.out.println(info.getTaskName() + " " + info.getDueDate() + " " + info.getDetails());
+//                    editingTasks();
+//                    break;
+//                case 3:System.out.println("What details would you like to add about this task?");
+//                //edit task details
+//                    input.nextLine();
+//                    info.setDetails(input.nextLine());
+//                    System.out.println(info.getTaskName() + " " + info.getDueDate() + " " + info.getDetails());
+//                    editingTasks();
+//                    break;
+//                case 4: taskOptions();
+//                //go back to taskOptions
+//                    break;
+//                case 5: startMenu();
+//                //go to main menu
+//                    break;
+//
+//
+//
+//
+//
+//            }
+
+//
+//        }catch(InputMismatchException ime){
+//
+//            System.out.println("Please input a valid number from above 1-5");
+//
+//        }
+

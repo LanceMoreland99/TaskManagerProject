@@ -122,10 +122,18 @@ public class Tasks {
         }
         int userInput = input.nextInt() - 1;
 
+        if(userInput > taskLibrary.size()){
+            System.out.println("please insert a number from one of the following above.");
+            editTaskInfo();
+        }
+
+        else {
+            Info displayTask = taskLibrary.get(userInput);
+
+            System.out.println(displayTask.getTaskName() + " " + displayTask.getDueDate() + " " + displayTask.getDetails());
+
+        }
         Info displayTask = taskLibrary.get(userInput);
-
-        System.out.println(displayTask.getTaskName() + " " + displayTask.getDueDate() + " " + displayTask.getDetails());
-
         try {
             System.out.println("What would you like to do?\n" +
                     "1. Edit task name.\n" +

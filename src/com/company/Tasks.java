@@ -5,6 +5,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
+/**I wouldn't call this tasks, as it's misleading. It's more along the lines of the actual manager, where things are being added, removed, etc. */
 public class Tasks {
 
     private Scanner input = new Scanner(System.in);
@@ -19,6 +20,10 @@ public class Tasks {
 
     protected void addTask(Info info) {
         //Code to add task goes here.
+
+        /**Setters are used for values changing on an object. Not for initial values. so for this reason it'd make more sense to have
+         * your Task object require in a constructor a name, duedate, and details, and to be all, Task task = new Task(taskName, taskDetails, dueDate);
+         * and to get those things from scanners. Then to add that task to your arraylist.*/
 
         System.out.println("What is the name of your task?");
         info.setTaskName(input.nextLine());
@@ -37,6 +42,7 @@ public class Tasks {
 
     protected void removeTask(int taskIndex) {
 
+        /**You should decrement here, instead. task-- */
         taskIndex -= taskIndex;
         System.out.println("You have removed a task from your task lists.");
         taskLibrary.remove(taskIndex);

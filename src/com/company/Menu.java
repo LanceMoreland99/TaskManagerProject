@@ -17,6 +17,10 @@ public class Menu {
                 "4. Exit.");
 
 
+        /**This works, but I personally prefer to make my case-switch numbers strings, that way you won't get a crash from the app
+         * expecting an int but getting something else. so you'll have '1', '2', and '3', instead of 1, 2, and 3. and because of this,
+         * you won't need to use a try/catch and can instead put in your default case "please enter a valid option" and use recursion
+         * to re-print the menu.*/
         try {
             switch (input.nextInt()) {
 
@@ -180,6 +184,8 @@ public class Menu {
         }
     }
 }
+
+/**Delete code you're not using. */
 //    public void editingTasks() {
 //        Info info = new Info();
 //        try{

@@ -1,5 +1,7 @@
 package com.company;
 
+/**This seems like your Task object, so it should be called Task, and should have a constructor that requires all of these things to be made (
+ * that way you don't have tasks that have no parameters, such as a task object that doesn't have a name, date, or detail) */
 public class Info {
 
     private String taskName;
